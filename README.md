@@ -7,6 +7,11 @@ Standalone Javascript Library to lazy load the image. You can use it without jqu
 ## Install
 Include the [lazy-image.js](./lazy-image.js) to your HTML or import it to your module (es6/node), Then it's ready to run.
 
+or You can install it via npm
+```bash
+$ npm install lazy-image-js -S
+```
+
 ## Usage
 ```javascript
 // Config Option
