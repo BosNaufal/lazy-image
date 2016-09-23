@@ -1,0 +1,22 @@
+{
+  "name": "lazy-image-js",
+  "version": "0.0.1",
+  "description": "Standalone Javascript Library to lazy load the image. You can use it without jquery~",
+  "main": "lazy-image.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BosNaufal/lazy-image.git"
+  },
+  "keywords": [
+    "load",
+    "lazy-load",
+    "library",
+    "lazy-image"
+  ],
+  "author": "Naufal Rabbani <bosnaufalemail@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BosNaufal/lazy-image/issues"
+  },
+  "homepage": "https://github.com/BosNaufal/lazy-image#readme",
+}
