@@ -49,30 +49,31 @@
       var src = img.getAttribute('data-src');
       img.removeAttribute('data-src');
       img.src = src;
-
     }
 
     // Hide First
     function hideImage(img) {
-      var imageHasLoaded = hasImageLoaded(img);
-      if(imageHasLoaded) {
-        setTimeout(function() {
+      var greyPic = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAACKaQAAimkBsWWzMgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAYSURBVBiVY3z27Nl/BiIAEzGKRhVSTyEA8gMDxYLXl28AAAAASUVORK5CYII=";
 
-          // Set the Size
-          var height = img.clientHeight;
-          var width = img.clientWidth;
+      img.onload = function () {
+        // Set the Size
+        var height = img.clientHeight;
+        var width = img.clientWidth;
 
-          // Save the original
-          img.setAttribute('data-original', img.src);
+        // Save the original
+        img.setAttribute('data-original', img.src);
 
-          // Loading State of Image
-          img.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAACKaQAAimkBsWWzMgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAYSURBVBiVY3z27Nl/BiIAEzGKRhVSTyEA8gMDxYLXl28AAAAASUVORK5CYII=";
-          img.style.width = width + 'px'
-          img.style.height = height + 'px'
-        })
+        // Loading State of Image
+        img.style.width = width + 'px'
+        img.style.height = height + 'px'
+
+        if(img.src !== greyPic) img.src = greyPic
+        img.onload = null
       }
+
       img.setAttribute('data-lazy', false);
     }
+
 
     // Process when in viewport
     function checkLoadedImagePosition() {
@@ -92,7 +93,6 @@
         var onCenterViewPort = imgPos.top + (windowHeight / 2) < windowHeight;
 
         if(onCenterViewPort) showImage(img)
-
 
       }
     }
